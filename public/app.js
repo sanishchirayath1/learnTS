@@ -47,3 +47,22 @@ form.addEventListener('submit', (e) => {
     console.log(doc);
     list.render(doc, type.value, 'end');
 });
+//generics
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: 'yoshi', age: 40 });
+console.log(docOne);
+const docThree = {
+    uid: 1,
+    resourceName: 'person',
+    data: { name: 'shaun' }
+};
+const docFour = {
+    uid: 1,
+    resourceName: 'person',
+    data: ['bread', 'milk', 'toilet roll']
+};
+console.log(docFour, docThree);
+// Enums
